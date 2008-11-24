@@ -1,0 +1,22 @@
+#summary User Guide
+
+= User Guide =
+([KoreanUserGuide 한국어페이지])
+  # Run the program.
+  # Play a song in iTunes.
+  # It will search and display informations about the song.
+  # You can click various parts of them. Each click will change an attribute of the song in iTunes.
+    * Image
+    * Album name
+    * Artist name
+    * Release year
+    * Track name
+    * Track number
+    * *All* button changes all of the above information.
+  # If you can't find correct album, click *More...* to get more results from Amazon.
+
+= Caveat =
+
+  * If song name or artist changes as a result of click, it will search again.
+  * You have to click while the song plays.
+  * If you activate other program, it will hide itself automatically. Click dock icon, use command-tab or play other song to show it up again.
