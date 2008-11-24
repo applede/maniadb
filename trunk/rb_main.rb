@@ -10,6 +10,9 @@ require 'osx/cocoa'
 
 def rb_main_init
   path = OSX::NSBundle.mainBundle.resourcePath.fileSystemRepresentation
+  $: << path + "/hpricot"
+  $: << path + "/hpricot/universal-java1.6"
+
   rbfiles = Dir.entries(path).select {|x| /\.rb\z/ =~ x}
   rbfiles -= [ File.basename(__FILE__) ]
   rbfiles.each do |path|

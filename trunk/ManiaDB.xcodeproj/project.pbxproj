@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185520A20EDB0E7E00D786B0 /* hpricot in Resources */ = {isa = PBXBuildFile; fileRef = 1855208E0EDB0E7E00D786B0 /* hpricot */; };
+		185520B00EDB122A00D786B0 /* manialogo_2s.icns in Resources */ = {isa = PBXBuildFile; fileRef = 185520AF0EDB122A00D786B0 /* manialogo_2s.icns */; };
 		18E954000ECF29AB009A3BC7 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E953FF0ECF29AB009A3BC7 /* AppDelegate.rb */; };
 		18E954790ECF455C009A3BC7 /* AlbumView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E954780ECF455C009A3BC7 /* AlbumView.rb */; };
 		18E9553D0ECF97B3009A3BC7 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E9553C0ECF97B3009A3BC7 /* ScriptingBridge.framework */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1855208E0EDB0E7E00D786B0 /* hpricot */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hpricot; sourceTree = "<group>"; };
+		185520AF0EDB122A00D786B0 /* manialogo_2s.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = manialogo_2s.icns; sourceTree = "<group>"; };
 		18E953FF0ECF29AB009A3BC7 /* AppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
 		18E954780ECF455C009A3BC7 /* AlbumView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AlbumView.rb; sourceTree = "<group>"; };
 		18E9553C0ECF97B3009A3BC7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = /System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<absolute>"; };
@@ -114,6 +118,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1855208E0EDB0E7E00D786B0 /* hpricot */,
 				18E956AE0ED3180D009A3BC7 /* Util.rb */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				E8F5E25803AEB7C803A81C6F /* rb_main.rb */,
@@ -124,6 +129,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				185520AF0EDB122A00D786B0 /* manialogo_2s.icns */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 			);
@@ -202,6 +208,8 @@
 				18E955C70ED079AF009A3BC7 /* ListView.rb in Resources */,
 				18E956640ED1D332009A3BC7 /* MyTextField.rb in Resources */,
 				18E956AF0ED3180D009A3BC7 /* Util.rb in Resources */,
+				185520A20EDB0E7E00D786B0 /* hpricot in Resources */,
+				185520B00EDB122A00D786B0 /* manialogo_2s.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,8 +2,8 @@
 //  Levenshtein.h
 //  ManiaDB
 //
-//  Created by Jake Song on 11/20/08.
-//  Copyright 2008 XL Games. All rights reserved.
+//  Created by Appledelhi on 11/20/08.
+//  Copyright 2008 Appledelhi. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
