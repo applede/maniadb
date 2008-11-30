@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'ManiaDB' target in the 'ManiaDB' project
+//
+
+#ifdef __OBJC__
+  #import <Cocoa/Cocoa.h>
+  #import <ScriptingBridge/ScriptingBridge.h>
+#endif

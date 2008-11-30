@@ -2,14 +2,13 @@
 //  main.m
 //  ManiaDB
 //
-//  Created by Appledelhi on 11/16/08.
-//  Copyright (c) 2008 Appledelhi. All rights reserved.
+//  Created by Appledelhi on 11/27/08.
+//  Copyright Appledelhi 2008. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
-#import <RubyCocoa/RBRuntime.h>
 
-int main(int argc, const char *argv[])
+int main(int argc, char *argv[])
 {
-    return RBApplicationMain("rb_main.rb", argc, argv);
+    return NSApplicationMain(argc,  (const char **) argv);
 }
