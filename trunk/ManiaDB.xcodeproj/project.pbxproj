@@ -3,61 +3,77 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 45;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		185520A20EDB0E7E00D786B0 /* hpricot in Resources */ = {isa = PBXBuildFile; fileRef = 1855208E0EDB0E7E00D786B0 /* hpricot */; };
-		185520B00EDB122A00D786B0 /* manialogo_2s.icns in Resources */ = {isa = PBXBuildFile; fileRef = 185520AF0EDB122A00D786B0 /* manialogo_2s.icns */; };
-		187404E70EDC745400D08CEB /* MyArrayController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 187404E60EDC745400D08CEB /* MyArrayController.rb */; };
-		18E954000ECF29AB009A3BC7 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E953FF0ECF29AB009A3BC7 /* AppDelegate.rb */; };
-		18E954790ECF455C009A3BC7 /* AlbumView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E954780ECF455C009A3BC7 /* AlbumView.rb */; };
-		18E9553D0ECF97B3009A3BC7 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E9553C0ECF97B3009A3BC7 /* ScriptingBridge.framework */; };
-		18E955C70ED079AF009A3BC7 /* ListView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E955C60ED079AF009A3BC7 /* ListView.rb */; };
-		18E956640ED1D332009A3BC7 /* MyTextField.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E956630ED1D332009A3BC7 /* MyTextField.rb */; };
-		18E956AF0ED3180D009A3BC7 /* Util.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E956AE0ED3180D009A3BC7 /* Util.rb */; };
-		18E959ED0ED4AEF0009A3BC7 /* Levenshtein.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E959EB0ED4AEF0009A3BC7 /* Levenshtein.h */; };
-		18E959EE0ED4AEF0009A3BC7 /* Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E959EC0ED4AEF0009A3BC7 /* Levenshtein.m */; };
-		4DDCA7060ACC9A6100E082CE /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
-		4DDCA7070ACC9A6100E082CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		4DDCA7080ACC9A6100E082CE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = E8F5E25803AEB7C803A81C6F /* rb_main.rb */; };
-		4DDCA70A0ACC9A6100E082CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		4DDCA70C0ACC9A6100E082CE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		4DDCA70D0ACC9A6100E082CE /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F5E24E03AEB6EC03A81C6F /* RubyCocoa.framework */; };
+		182B65A00EE1943B000670C8 /* CoverZzlZzl.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B659F0EE1943B000670C8 /* CoverZzlZzl.m */; };
+		182B660C0EE1AEE8000670C8 /* AlbumArtExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B660B0EE1AEE8000670C8 /* AlbumArtExchange.m */; };
+		1837BE570EDE3E2F0095CA4F /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837BE560EDE3E2F0095CA4F /* RegexKitLite.m */; };
+		1837BE5A0EDE3EAD0095CA4F /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1837BE590EDE3EAD0095CA4F /* libicucore.dylib */; };
+		1837BEB00EDF45CC0095CA4F /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837BEAF0EDF45CC0095CA4F /* Util.m */; };
+		1853E1C20EE1F54600A17FE7 /* SearchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853E1C10EE1F54600A17FE7 /* SearchInfo.m */; };
+		1853E2F90EE2917D00A17FE7 /* MyArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853E2F80EE2917D00A17FE7 /* MyArrayController.m */; };
+		18C5B1250EDDC35D001960FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B1240EDDC35D001960FE /* AppDelegate.m */; };
+		18C5B1300EDDC4F2001960FE /* ListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B12F0EDDC4F2001960FE /* ListView.m */; };
+		18C5B13F0EDDC6ED001960FE /* AlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B13E0EDDC6ED001960FE /* AlbumView.m */; };
+		18C5B1640EDDCDBB001960FE /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B1630EDDCDBB001960FE /* MyTextField.m */; };
+		18C5B1890EDDD483001960FE /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C5B1880EDDD483001960FE /* ScriptingBridge.framework */; };
+		18C5B1B40EDDD92F001960FE /* Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B1B30EDDD92F001960FE /* Amazon.m */; };
+		18C5B1C30EDDD9A2001960FE /* ManiaDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B1C20EDDD9A2001960FE /* ManiaDB.m */; };
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		1855208E0EDB0E7E00D786B0 /* hpricot */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hpricot; sourceTree = "<group>"; };
-		185520AF0EDB122A00D786B0 /* manialogo_2s.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = manialogo_2s.icns; sourceTree = "<group>"; };
-		187404E60EDC745400D08CEB /* MyArrayController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MyArrayController.rb; sourceTree = "<group>"; };
-		18E953FF0ECF29AB009A3BC7 /* AppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
-		18E954780ECF455C009A3BC7 /* AlbumView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AlbumView.rb; sourceTree = "<group>"; };
-		18E9553C0ECF97B3009A3BC7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = /System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<absolute>"; };
-		18E955C60ED079AF009A3BC7 /* ListView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ListView.rb; sourceTree = "<group>"; };
-		18E956630ED1D332009A3BC7 /* MyTextField.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MyTextField.rb; sourceTree = "<group>"; };
-		18E956AE0ED3180D009A3BC7 /* Util.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Util.rb; sourceTree = "<group>"; };
-		18E959EB0ED4AEF0009A3BC7 /* Levenshtein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Levenshtein.h; sourceTree = "<group>"; };
-		18E959EC0ED4AEF0009A3BC7 /* Levenshtein.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Levenshtein.m; sourceTree = "<group>"; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		182B659E0EE1943B000670C8 /* CoverZzlZzl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverZzlZzl.h; sourceTree = "<group>"; };
+		182B659F0EE1943B000670C8 /* CoverZzlZzl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverZzlZzl.m; sourceTree = "<group>"; };
+		182B660A0EE1AEE8000670C8 /* AlbumArtExchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumArtExchange.h; sourceTree = "<group>"; };
+		182B660B0EE1AEE8000670C8 /* AlbumArtExchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumArtExchange.m; sourceTree = "<group>"; };
+		1837BE550EDE3E2F0095CA4F /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		1837BE560EDE3E2F0095CA4F /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		1837BE590EDE3EAD0095CA4F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = /usr/lib/libicucore.dylib; sourceTree = "<absolute>"; };
+		1837BEAE0EDF45CC0095CA4F /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		1837BEAF0EDF45CC0095CA4F /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		1853E1C00EE1F54600A17FE7 /* SearchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchInfo.h; sourceTree = "<group>"; };
+		1853E1C10EE1F54600A17FE7 /* SearchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchInfo.m; sourceTree = "<group>"; };
+		1853E2F70EE2917D00A17FE7 /* MyArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyArrayController.h; sourceTree = "<group>"; };
+		1853E2F80EE2917D00A17FE7 /* MyArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyArrayController.m; sourceTree = "<group>"; };
+		18C5B1230EDDC35D001960FE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18C5B1240EDDC35D001960FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18C5B12E0EDDC4F2001960FE /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
+		18C5B12F0EDDC4F2001960FE /* ListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListView.m; sourceTree = "<group>"; };
+		18C5B13D0EDDC6ED001960FE /* AlbumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumView.h; sourceTree = "<group>"; };
+		18C5B13E0EDDC6ED001960FE /* AlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumView.m; sourceTree = "<group>"; };
+		18C5B1620EDDCDBB001960FE /* MyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextField.h; sourceTree = "<group>"; };
+		18C5B1630EDDCDBB001960FE /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
+		18C5B1880EDDD483001960FE /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = /System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<absolute>"; };
+		18C5B1B20EDDD92F001960FE /* Amazon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Amazon.h; sourceTree = "<group>"; };
+		18C5B1B30EDDD92F001960FE /* Amazon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amazon.m; sourceTree = "<group>"; };
+		18C5B1C10EDDD9A2001960FE /* ManiaDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManiaDB.h; sourceTree = "<group>"; };
+		18C5B1C20EDDD9A2001960FE /* ManiaDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManiaDB.m; sourceTree = "<group>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		4DDCA7110ACC9A6100E082CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DDCA7120ACC9A6100E082CE /* ManiaDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManiaDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8F5E24E03AEB6EC03A81C6F /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /System/Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
-		E8F5E25803AEB7C803A81C6F /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* ManiaDB_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManiaDB_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* ManiaDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManiaDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4DDCA70B0ACC9A6100E082CE /* Frameworks */ = {
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDCA70C0ACC9A6100E082CE /* Cocoa.framework in Frameworks */,
-				4DDCA70D0ACC9A6100E082CE /* RubyCocoa.framework in Frameworks */,
-				18E9553D0ECF97B3009A3BC7 /* ScriptingBridge.framework in Frameworks */,
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				18C5B1890EDDD483001960FE /* ScriptingBridge.framework in Frameworks */,
+				1837BE5A0EDE3EAD0095CA4F /* libicucore.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,13 +83,19 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				187404E60EDC745400D08CEB /* MyArrayController.rb */,
-				18E956630ED1D332009A3BC7 /* MyTextField.rb */,
-				18E955C60ED079AF009A3BC7 /* ListView.rb */,
-				18E953FF0ECF29AB009A3BC7 /* AppDelegate.rb */,
-				18E954780ECF455C009A3BC7 /* AlbumView.rb */,
-				18E959EB0ED4AEF0009A3BC7 /* Levenshtein.h */,
-				18E959EC0ED4AEF0009A3BC7 /* Levenshtein.m */,
+				1853E0E70EE1DC9800A17FE7 /* Search */,
+				18C5B1230EDDC35D001960FE /* AppDelegate.h */,
+				18C5B1240EDDC35D001960FE /* AppDelegate.m */,
+				1853E1C00EE1F54600A17FE7 /* SearchInfo.h */,
+				1853E1C10EE1F54600A17FE7 /* SearchInfo.m */,
+				18C5B12E0EDDC4F2001960FE /* ListView.h */,
+				18C5B12F0EDDC4F2001960FE /* ListView.m */,
+				18C5B13D0EDDC6ED001960FE /* AlbumView.h */,
+				18C5B13E0EDDC6ED001960FE /* AlbumView.m */,
+				18C5B1620EDDCDBB001960FE /* MyTextField.h */,
+				18C5B1630EDDCDBB001960FE /* MyTextField.m */,
+				1853E2F70EE2917D00A17FE7 /* MyArrayController.h */,
+				1853E2F80EE2917D00A17FE7 /* MyArrayController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -81,9 +103,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18E9553C0ECF97B3009A3BC7 /* ScriptingBridge.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				E8F5E24E03AEB6EC03A81C6F /* RubyCocoa.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -91,16 +111,41 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1837BE540EDE3E2F0095CA4F /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				1837BE550EDE3E2F0095CA4F /* RegexKitLite.h */,
+				1837BE560EDE3E2F0095CA4F /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		1853E0E70EE1DC9800A17FE7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				18C5B1B20EDDD92F001960FE /* Amazon.h */,
+				18C5B1B30EDDD92F001960FE /* Amazon.m */,
+				18C5B1C10EDDD9A2001960FE /* ManiaDB.h */,
+				18C5B1C20EDDD9A2001960FE /* ManiaDB.m */,
+				182B659E0EE1943B000670C8 /* CoverZzlZzl.h */,
+				182B659F0EE1943B000670C8 /* CoverZzlZzl.m */,
+				182B660A0EE1AEE8000670C8 /* AlbumArtExchange.h */,
+				182B660B0EE1AEE8000670C8 /* AlbumArtExchange.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DDCA7120ACC9A6100E082CE /* ManiaDB.app */,
+				8D1107320486CEB800E47090 /* ManiaDB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,12 +153,12 @@
 		29B97314FDCFA39411CA2CEA /* ManiaDB */ = {
 			isa = PBXGroup;
 			children = (
+				1837BE540EDE3E2F0095CA4F /* RegexKitLite */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				4DDCA7110ACC9A6100E082CE /* Info.plist */,
 			);
 			name = ManiaDB;
 			sourceTree = "<group>";
@@ -121,10 +166,10 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1855208E0EDB0E7E00D786B0 /* hpricot */,
-				18E956AE0ED3180D009A3BC7 /* Util.rb */,
+				32CA4F630368D1EE00C91783 /* ManiaDB_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				E8F5E25803AEB7C803A81C6F /* rb_main.rb */,
+				1837BEAE0EDF45CC0095CA4F /* Util.h */,
+				1837BEAF0EDF45CC0095CA4F /* Util.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -132,9 +177,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				185520AF0EDB122A00D786B0 /* manialogo_2s.icns */,
-				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -142,6 +187,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1837BE590EDE3EAD0095CA4F /* libicucore.dylib */,
+				18C5B1880EDDD483001960FE /* ScriptingBridge.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -150,26 +197,14 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		4DDCA7040ACC9A6100E082CE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18E959ED0ED4AEF0009A3BC7 /* Levenshtein.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		4DDCA7030ACC9A6100E082CE /* ManiaDB */ = {
+		8D1107260486CEB800E47090 /* ManiaDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DDCA70E0ACC9A6100E082CE /* Build configuration list for PBXNativeTarget "ManiaDB" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ManiaDB" */;
 			buildPhases = (
-				4DDCA7040ACC9A6100E082CE /* Headers */,
-				4DDCA7050ACC9A6100E082CE /* Resources */,
-				4DDCA7090ACC9A6100E082CE /* Sources */,
-				4DDCA70B0ACC9A6100E082CE /* Frameworks */,
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,7 +213,7 @@
 			name = ManiaDB;
 			productInstallPath = "$(HOME)/Applications";
 			productName = ManiaDB;
-			productReference = 4DDCA7120ACC9A6100E082CE /* ManiaDB.app */;
+			productReference = 8D1107320486CEB800E47090 /* ManiaDB.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,46 +221,48 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 4D7A7B570ABF745500C2D4C0 /* Build configuration list for PBXProject "ManiaDB" */;
-			compatibilityVersion = "Xcode 3.0";
-			hasScannedForEncodings = 0;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ManiaDB" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* ManiaDB */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DDCA7030ACC9A6100E082CE /* ManiaDB */,
+				8D1107260486CEB800E47090 /* ManiaDB */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4DDCA7050ACC9A6100E082CE /* Resources */ = {
+		8D1107290486CEB800E47090 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDCA7060ACC9A6100E082CE /* MainMenu.nib in Resources */,
-				4DDCA7070ACC9A6100E082CE /* InfoPlist.strings in Resources */,
-				4DDCA7080ACC9A6100E082CE /* rb_main.rb in Resources */,
-				18E954000ECF29AB009A3BC7 /* AppDelegate.rb in Resources */,
-				18E954790ECF455C009A3BC7 /* AlbumView.rb in Resources */,
-				18E955C70ED079AF009A3BC7 /* ListView.rb in Resources */,
-				18E956640ED1D332009A3BC7 /* MyTextField.rb in Resources */,
-				18E956AF0ED3180D009A3BC7 /* Util.rb in Resources */,
-				185520A20EDB0E7E00D786B0 /* hpricot in Resources */,
-				185520B00EDB122A00D786B0 /* manialogo_2s.icns in Resources */,
-				187404E70EDC745400D08CEB /* MyArrayController.rb in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4DDCA7090ACC9A6100E082CE /* Sources */ = {
+		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDCA70A0ACC9A6100E082CE /* main.m in Sources */,
-				18E959EE0ED4AEF0009A3BC7 /* Levenshtein.m in Sources */,
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				18C5B1250EDDC35D001960FE /* AppDelegate.m in Sources */,
+				18C5B1300EDDC4F2001960FE /* ListView.m in Sources */,
+				18C5B13F0EDDC6ED001960FE /* AlbumView.m in Sources */,
+				18C5B1640EDDCDBB001960FE /* MyTextField.m in Sources */,
+				18C5B1B40EDDD92F001960FE /* Amazon.m in Sources */,
+				18C5B1C30EDDD9A2001960FE /* ManiaDB.m in Sources */,
+				1837BE570EDE3E2F0095CA4F /* RegexKitLite.m in Sources */,
+				1837BEB00EDF45CC0095CA4F /* Util.m in Sources */,
+				182B65A00EE1943B000670C8 /* CoverZzlZzl.m in Sources */,
+				182B660C0EE1AEE8000670C8 /* AlbumArtExchange.m in Sources */,
+				1853E1C20EE1F54600A17FE7 /* SearchInfo.m in Sources */,
+				1853E2F90EE2917D00A17FE7 /* MyArrayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,90 +277,93 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				29B97319FDCFA39411CA2CEA /* English */,
+				1DDD58150DA1D0A300B32029 /* English */,
 			);
-			name = MainMenu.nib;
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4D7A7B580ABF745500C2D4C0 /* Debug */ = {
+		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ManiaDB_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = ManiaDB;
 			};
 			name = Debug;
 		};
-		4D7A7B590ABF745500C2D4C0 /* Release */ = {
+		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ManiaDB_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = ManiaDB;
 			};
 			name = Release;
 		};
-		4DDCA70F0ACC9A6100E082CE /* Debug */ = {
+		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = ManiaDB;
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
-		4DDCA7100ACC9A6100E082CE /* Release */ = {
+		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = ManiaDB;
-				WRAPPER_EXTENSION = app;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4D7A7B570ABF745500C2D4C0 /* Build configuration list for PBXProject "ManiaDB" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ManiaDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4D7A7B580ABF745500C2D4C0 /* Debug */,
-				4D7A7B590ABF745500C2D4C0 /* Release */,
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DDCA70E0ACC9A6100E082CE /* Build configuration list for PBXNativeTarget "ManiaDB" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ManiaDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4DDCA70F0ACC9A6100E082CE /* Debug */,
-				4DDCA7100ACC9A6100E082CE /* Release */,
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
