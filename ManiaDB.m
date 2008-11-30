@@ -66,7 +66,7 @@ static NSString* chomp(NSString* str)
     url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=album&option2=artist&query2=%@",
                  artistEsc);
   } else {
-    url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=album&option2=artist&query2=%@",
+    url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=album&option=album&query=%@",
                  query(_method, artistEsc, songEsc, escape(album)));
   }
   NSXMLDocument* doc = xmlDoc(url);
@@ -79,7 +79,7 @@ static NSString* chomp(NSString* str)
                                  textOf(item, @"@id");
     url = [NSString stringWithFormat:@"http://www.maniadb.com/api/album.asp?key=d232a03189c58cab2868&a=%@", albumId];
     NSXMLDocument* albumDoc = xmlDoc(url);
-    NSLog(@"%@", largeVersion(textOf(albumDoc, @"//image")));
+    // NSLog(@"%@", largeVersion(textOf(albumDoc, @"//image")));
     setImage(albumView, largeVersion(textOf(albumDoc, @"//image")));
     setArtist(albumView, textOf(albumDoc, @"//maniadb:artist/name"));
     setAlbum(albumView, textOf(albumDoc, @"//maniadb:shorttitle"));
