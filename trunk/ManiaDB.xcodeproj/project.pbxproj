@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		185520A20EDB0E7E00D786B0 /* hpricot in Resources */ = {isa = PBXBuildFile; fileRef = 1855208E0EDB0E7E00D786B0 /* hpricot */; };
 		185520B00EDB122A00D786B0 /* manialogo_2s.icns in Resources */ = {isa = PBXBuildFile; fileRef = 185520AF0EDB122A00D786B0 /* manialogo_2s.icns */; };
+		187404E70EDC745400D08CEB /* MyArrayController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 187404E60EDC745400D08CEB /* MyArrayController.rb */; };
 		18E954000ECF29AB009A3BC7 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E953FF0ECF29AB009A3BC7 /* AppDelegate.rb */; };
 		18E954790ECF455C009A3BC7 /* AlbumView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 18E954780ECF455C009A3BC7 /* AlbumView.rb */; };
 		18E9553D0ECF97B3009A3BC7 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E9553C0ECF97B3009A3BC7 /* ScriptingBridge.framework */; };
@@ -30,6 +31,7 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1855208E0EDB0E7E00D786B0 /* hpricot */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hpricot; sourceTree = "<group>"; };
 		185520AF0EDB122A00D786B0 /* manialogo_2s.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = manialogo_2s.icns; sourceTree = "<group>"; };
+		187404E60EDC745400D08CEB /* MyArrayController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MyArrayController.rb; sourceTree = "<group>"; };
 		18E953FF0ECF29AB009A3BC7 /* AppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
 		18E954780ECF455C009A3BC7 /* AlbumView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AlbumView.rb; sourceTree = "<group>"; };
 		18E9553C0ECF97B3009A3BC7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = /System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<absolute>"; };
@@ -65,6 +67,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				187404E60EDC745400D08CEB /* MyArrayController.rb */,
 				18E956630ED1D332009A3BC7 /* MyTextField.rb */,
 				18E955C60ED079AF009A3BC7 /* ListView.rb */,
 				18E953FF0ECF29AB009A3BC7 /* AppDelegate.rb */,
@@ -210,6 +213,7 @@
 				18E956AF0ED3180D009A3BC7 /* Util.rb in Resources */,
 				185520A20EDB0E7E00D786B0 /* hpricot in Resources */,
 				185520B00EDB122A00D786B0 /* manialogo_2s.icns in Resources */,
+				187404E70EDC745400D08CEB /* MyArrayController.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

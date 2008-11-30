@@ -4,7 +4,7 @@ require 'open-uri'
 include OSX
 
 class AppDelegate < NSObject
-  attr_accessor :scrollView, :contentView, :window
+  attr_accessor :scrollView, :contentView, :window, :tableView
   attr_reader :track, :curView
   
   def applicationShouldTerminateAfterLastWindowClosed(sender)
@@ -13,6 +13,7 @@ class AppDelegate < NSObject
   
   def applicationDidFinishLaunching(notification)
     setUpView
+    setUpSearchOrder
 
     NSDistributedNotificationCenter.defaultCenter.addObserver_selector_name_object_(
           self, "iTunesNotification:", "com.apple.iTunes.playerInfo", nil)
@@ -37,6 +38,16 @@ class AppDelegate < NSObject
     @curView.setAutoresizingMask NSViewMinYMargin
     @curView.album = "Nothing Playing"
     @contentView.addSubview(@curView)
+  end
+  
+  def setUpSearchOrder
+    def_values = { :searchOrder => [ { :method => 0, :enabled => 1, :label => "ManiaDB: artist + song" },
+                                     { :method => 1, :enabled => 1, :label => "ManiaDB: artist" },
+                                     { :method => 2, :enabled => 1, :label => "Amazon: song" },
+                                     { :method => 3, :enabled => 1, :label => "Amazon: artist" },
+                                     { :method => 4, :enabled => 1, :label => "Cover ZzlZzl: artist"} ] }
+    NSUserDefaults.standardUserDefaults.registerDefaults(def_values)
+    NSUserDefaultsController.sharedUserDefaultsController.setInitialValues(def_values)
   end
   
   def iTunesNotification(notification)
@@ -71,37 +82,46 @@ class AppDelegate < NSObject
     # @thread = NSThread.detachNewThreadSelector_toTarget_withObject("search:", self, nil)
     @thread = Thread.new do
       begin
-        searchManiaDB true, @artist, @album, @song
-        searchManiaDB false, @artist, @album, @song
-        searchAmazon true, @artist, @album, @song, @page
-        searchAmazon false, @artist, @album, @song, @page
-        @listView.loadImages
+        searches = NSUserDefaultsController.sharedUserDefaultsController.values.valueForKey(:searchOrder)
+        searches.each do |search|
+          enabled = search[:enabled]
+          case search[:method]
+          when 0
+            searchManiaDB true, @artist, @album, @song if enabled
+          when 1
+            searchManiaDB false, @artist, @album, @song if enabled
+          when 2
+            searchAmazon true, @artist, @album, @song, @page if enabled
+          when 3
+            searchAmazon false, @artist, @album, @song, @page if enabled
+          when 4
+            searchCoverZzlZzl @artist, @album, @song if enabled
+          end
+        end
       rescue => ex
         puts ex.message, ex.backtrace
       end
     end
   end
   
-  def search(x)
-    ap = NSAutoreleasePool.alloc.init
-    begin
-      searchManiaDB true, @artist, @album, @song
-      searchManiaDB false, @artist, @album, @song
-      searchAmazon true, @artist, @album, @song, @page
-      searchAmazon false, @artist, @album, @song, @page
-      @listView.loadImages
-    rescue => ex
-      puts ex.message, ex.backtrace
-    end
-    ap.release
-  end
+  # def search(x)
+  #   ap = NSAutoreleasePool.alloc.init
+  #   begin
+  #     searchManiaDB true, @artist, @album, @song
+  #     searchManiaDB false, @artist, @album, @song
+  #     searchAmazon true, @artist, @album, @song, @page
+  #     searchAmazon false, @artist, @album, @song, @page
+  #   rescue => ex
+  #     puts ex.message, ex.backtrace
+  #   end
+  #   ap.release
+  # end
   
   def moreResults sender, search_song
     if @page < @total_page
       @listView.removeButton sender
       @page += 1
       searchAmazon search_song, @artist, @album, @song, @page
-      @listView.loadImages
     end
   end
   
@@ -160,7 +180,7 @@ class AppDelegate < NSObject
       albumView = @listView.add
       album_id = song_search ? album_id_from((item/"maniadb:album/link").text) :
                                item.get_attribute("id")
-      albumView.imageURL = large_version((item/"image").text)
+      albumView.image = image_from(large_version((item/"image").text))
 
       url = "http://www.maniadb.com/api/album.asp?key=d232a03189c58cab2868&a=#{album_id}"
       album_doc = Hpricot.XML(open(url))
@@ -196,13 +216,13 @@ class AppDelegate < NSObject
     p = @total_page > 0 ? page : 0
     section = "Amazon: " + (search_song ? "#{song}" : "#{artist}") + "  (#{p}/#{@total_page})"
     @listView.addSection(section, items.size)
-    if items.size == 0
-      puts "------Amazon-------"
-      puts doc
-    end
+    # if items.size == 0
+    #   puts "------Amazon-------"
+    #   puts doc
+    # end
     items.each do |item|
       albumView = @listView.add
-      albumView.imageURL = (item/"LargeImage/URL").text
+      albumView.image = image_from((item/"LargeImage/URL").text)
       albumView.album = unescape((item/"Title").text)
       albumView.artist = artist_list(item/"Artist")
       albumView.year = year_from((item/"OriginalReleaseDate").text)
@@ -221,72 +241,14 @@ class AppDelegate < NSObject
       @listView.addButton(search_song ? "moreSongResults:" : "moreArtistResults:")
     end
   end
+  
+  def searchCoverZzlZzl artist, album, song
+    artist_esc = escape(NSString.stringWithCString_encoding(artist, CFStringConvertEncodingToNSStringEncoding(0x0640)))
+    url = "http://cover.zzlzzl.net/?search_str=#{artist_esc}&mode=search&Submit=Submit"
+    doc = Hpricot.XML(open(url))
+    trs = doc/"body/table/tr"
+    trs.each do |tr|
+      puts tr/"td", "-------------"
+    end
+  end
 end
-
-# def similar?(a, b)
-#   if a == b
-#     true
-#   else
-#     a = a.downcase
-#     b = b.downcase
-#     a.casecmp(b) == 0 ||
-#     a.include?(b) ||
-#     b.include?(a)
-#   end
-# end
-# 
-# def score cur, str
-#   return 100 if cur == str
-#   score = 99
-#   for method in 1..1000 do
-#     case method
-#     when 1
-#       cur = cur.downcase
-#       str = str.downcase
-#     when 2
-#       cur = cur.gsub /\ban\b/, "a"
-#       str = str.gsub /\ban\b/, "a"
-#     when 3
-#       cur = cur.gsub /\ /, ""
-#       str = str.gsub /\ /, ""
-#     when 4
-#       cur = cur.gsub /\(|\)/, ""
-#       str = str.gsub /\(|\)/, ""
-#     else
-#       break
-#     end
-#     return score if cur == str
-#     return score - 1 if str.include? cur
-#     return score - 2 if cur.include? str
-#     score -= 3
-#   end
-#   return 0
-# end
-# 
-# def word_score cur, str
-#   sc = 0
-#   last = -1
-#   words = str.split(" ")
-#   cur.split(" ").each do |word|
-#     index = words.index word
-#     if index
-#       if index > last
-#         sc += 10
-#       else
-#         sc += 5
-#       end
-#       last = index
-#     end
-#   end
-#   sc
-# end
-# 
-# def score2 cur, str
-#   return 1000 if cur == str
-#   cur = cur.downcase
-#   str = str.downcase
-#   return 999 if cur == str
-#   sc1 = word_score cur, str
-#   sc2 = word_score str, cur
-#   sc1 > sc2 ? sc1 : sc2
-# end
