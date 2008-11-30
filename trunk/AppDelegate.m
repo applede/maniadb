@@ -120,9 +120,7 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
       return;
     if (_thread) {
       [_thread cancel];
-      while ([_thread isExecuting]) {
-        [NSThread sleepForTimeInterval:0.1];
-      }
+      [NSThread sleepForTimeInterval:1];
     }
     _album = album;
     _song  = song;

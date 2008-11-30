@@ -49,7 +49,9 @@ NSString* textOf(NSXMLNode* node, NSString* path)
 NSImage* imageFrom(NSString* str)
 {
   if (!str) return nil;
-  NSImage* image = [[NSImage alloc] initByReferencingURL:[NSURL URLWithString:str]];
+  NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:str]];
+  // NSImage* image = [[NSImage alloc] initByReferencingURL:[NSURL URLWithString:str]];
+  NSImage* image = [[NSImage alloc] initWithData:data];
   NSArray* array = [image representations];
   if ([array count] > 0) {
     NSImageRep* rep = [array objectAtIndex:0];
@@ -155,5 +157,5 @@ void setImage(AlbumView* albumView, NSString* url)
   if ([[NSThread currentThread] isCancelled]) {
     [NSThread exit];
   }
-  [albumView performSelectorInBackground:@selector(setImageFrom:) withObject:[url copy]];
+  [albumView performSelectorInBackground:@selector(setImageFrom:) withObject:url];
 }
