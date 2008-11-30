@@ -33,7 +33,7 @@ def unescape(str)
 end
 
 def escape(str)
-  URI.escape(str, /[ &"\x7f-\xff]/)
+  URI.escape(str, /[ &"'\x7f-\xff]/)
 end
 
 def year_from(str)
