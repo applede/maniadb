@@ -25,18 +25,30 @@ static NSString* largeVersion(NSString* str)
   return [str stringByReplacingOccurrencesOfRegex:@"www\\." withString:@"image."];
 }
 
-static NSString* hackVersion(NSString* str)
+static NSString* hackVersion(NSString* str, int i)
 {
   NSString* number = match(str, @"a=([0-9]+)", 1);
   NSString* three = match(number, @"...", 0);
-  return format(@"http://image.maniadb.com/images/album/%@/%@_f_1.jpg", three, number);
-}
-
-static NSString* hackVersion2(NSString* str)
-{
-  NSString* number = match(str, @"a=([0-9]+)", 1);
-  NSString* three = match(number, @"...", 0);
-  return format(@"http://image.maniadb.com/images/album/%@/%@_1_f.jpg", three, number);
+  switch (i) {
+  case 0:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_f_1.jpg", three, number);
+  case 1:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_1_f.jpg", three, number);
+  case 2:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_2_f.jpg", three, number);
+  case 3:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_mca_f.jpg", three, number);
+  case 4:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_cda_f.jpg", three, number);
+  case 5:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_f.jpg", three, number);
+  case 6:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_0_f.jpg", three, number);
+  case 7:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_f_2.jpg", three, number);
+  default:
+    return nil;
+  }
 }
 
 static NSString* chomp(NSString* str)
@@ -80,8 +92,12 @@ static NSString* chomp(NSString* str)
     url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=album&option2=artist&query2=%@",
                  artistEsc);
   } else {
+    NSString* queryStr = query(_method, artistEsc, songEsc, escape(album));
+    if ([queryStr length] == 0) {
+      return;
+    }
     url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=album&option=album&query=%@",
-                 query(_method, artistEsc, songEsc, escape(album)));
+                 queryStr);
   }
   NSXMLDocument* doc = xmlDoc(url);
   NSArray* items = [self uniqItems:nodes(doc, @"//item")];
@@ -94,8 +110,19 @@ static NSString* chomp(NSString* str)
     url = [NSString stringWithFormat:@"http://www.maniadb.com/api/album.asp?key=d232a03189c58cab2868&a=%@", albumId];
     NSXMLDocument* albumDoc = xmlDoc(url);
 
-    if (!setImageDirect(albumView, hackVersion(textOf(albumDoc, @"//image")))) {
-      setImageDirect(albumView, hackVersion2(textOf(albumDoc, @"//image")));
+    NSString* imageURL = textOf(albumDoc, @"//image");
+    if (!setImageDirect(albumView, largeVersion(imageURL))) {
+      for (int i = 0; i < 100; i++) {
+        NSString* str = hackVersion(imageURL, i);
+        if (str) {
+          if (setImageDirect(albumView, str)) {
+            break;
+          }
+        } else {
+          NSLog(@"%@", imageURL);
+          break;
+        }
+      }
     }
     setArtist(albumView, textOf(albumDoc, @"//maniadb:artist/name"));
     setAlbum(albumView, textOf(albumDoc, @"//maniadb:shorttitle"));

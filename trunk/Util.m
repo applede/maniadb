@@ -24,8 +24,10 @@ int score(NSString* a, NSString* b)
     } else if (includes(as, bs)) {
       return 97;
     } else {
-      NSString* am = gsub(as, @"[- .,!\\?\\(\\)]", @"");
-      NSString* bm = gsub(bs, @"[- .,!\\?\\(\\)]", @"");
+      NSString* am = gsub(as, @"feat(\\.|uring).*", @"");
+      NSString* bm = gsub(bs, @"feat(\\.|uring).*", @"");
+      am = gsub(am, @"[- .,!'\"\\?\\(\\)]", @"");
+      bm = gsub(bm, @"[- .,!'\"\\?\\(\\)]", @"");
       if ([am isEqualToString:bm]) {
         return 96;
       } else if (includes(bm, am)) {
