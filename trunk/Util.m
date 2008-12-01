@@ -8,6 +8,7 @@
 
 #import "Util.h"
 #import "SearchInfo.h"
+#import "AlbumView.h"
 
 int score(NSString* a, NSString* b)
 {
@@ -52,10 +53,12 @@ NSImage* imageFrom(NSString* str)
   NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:str]];
   // NSImage* image = [[NSImage alloc] initByReferencingURL:[NSURL URLWithString:str]];
   NSImage* image = [[NSImage alloc] initWithData:data];
-  NSArray* array = [image representations];
-  if ([array count] > 0) {
-    NSImageRep* rep = [array objectAtIndex:0];
-    [image setSize:NSMakeSize([rep pixelsWide], [rep pixelsHigh])];
+  if (image) {
+    NSArray* array = [image representations];
+    if ([array count] > 0) {
+      NSImageRep* rep = [array objectAtIndex:0];
+      [image setSize:NSMakeSize([rep pixelsWide], [rep pixelsHigh])];
+    }
   }
   return image;
 }
@@ -158,4 +161,14 @@ void setImage(AlbumView* albumView, NSString* url)
     [NSThread exit];
   }
   [albumView performSelectorInBackground:@selector(setImageFrom:) withObject:url];
+}
+
+BOOL setImageDirect(AlbumView* albumView, NSString* url)
+{
+  if ([[NSThread currentThread] isCancelled]) {
+    [NSThread exit];
+  }
+  NSImage* image = imageFrom(url);
+  [albumView setImage:image];
+  return image != nil;
 }
