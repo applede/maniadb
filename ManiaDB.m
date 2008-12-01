@@ -121,7 +121,7 @@ static NSString* chomp(NSString* str)
             break;
           }
         } else {
-          NSLog(@"--------------------------%@", imageURL);
+          NSLog(@"---------[%@]", imageURL);
           break;
         }
       }
