@@ -47,7 +47,8 @@
 }
 
 - (AlbumView*)curView;
-- (id<ITunes>) track;
+- (id<ITunes>)track;
+
 - (IBAction)add:sender;
 - (IBAction)remove:sender;
 - (IBAction)endSheet:sender;

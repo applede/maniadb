@@ -46,6 +46,8 @@ static NSString* hackVersion(NSString* str, int i)
     return format(@"http://image.maniadb.com/images/album/%@/%@_0_f.jpg", three, number);
   case 7:
     return format(@"http://image.maniadb.com/images/album/%@/%@_f_2.jpg", three, number);
+  case 8:
+    return format(@"http://image.maniadb.com/images/album/%@/%@_cdb_f.jpg", three, number);
   default:
     return nil;
   }
@@ -119,7 +121,7 @@ static NSString* chomp(NSString* str)
             break;
           }
         } else {
-          NSLog(@"%@", imageURL);
+          NSLog(@"--------------------------%@", imageURL);
           break;
         }
       }
