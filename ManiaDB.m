@@ -84,30 +84,36 @@ static NSString* chomp(NSString* str)
             listView:(ListView*)listView
 {
   _ids = [NSMutableDictionary dictionary];
-  NSString* artistEsc = escape(artist);
-  NSString* songEsc = escape(song);
   NSString* url = nil;
-  if (_method == M_ArtistSong) {
-    url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=song&option=song&query=%@&option2=artist&query2=%@",
-                 songEsc, artistEsc);
-  } else if (_method == M_Artist) {
-    url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=album&option2=artist&query2=%@",
-                 artistEsc);
-  } else {
-    NSString* queryStr = query(_method, artistEsc, songEsc, escape(album));
-    if ([queryStr length] == 0) {
-      return;
+  BOOL songQuery = NO;
+  if (_method & M_Song && song) {
+    url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=song&option=song&query=%@",
+                 escape(song));
+    int seq = 2;
+    if (_method & M_Artist && artist) {
+      url = [url stringByAppendingFormat:@"&option2=artist&query2=%@", escape(artist)];
+      seq = 3;
     }
+    if (_method & M_Album && album) {
+      url = [url stringByAppendingFormat:@"&option%d=album&query%d=%@", seq, seq, escape(album)];
+    }
+    songQuery = YES;
+  } else {
     url = format(@"http://www.maniadb.com/api/search.asp?key=d232a03189c58cab2868&target=music&display=10&itemtype=album&option=album&query=%@",
-                 queryStr);
+                           (_method & M_Album) && album ? escape(album) : @"");
+    if (_method & M_Artist && artist) {
+      url = [url stringByAppendingFormat:@"&option2=artist&query2=%@", escape(artist)];
+    }
   }
+  // NSLog(@"url = %@", url);
   NSXMLDocument* doc = xmlDoc(url);
+  // NSLog(@"%@", [doc XMLString]);
   NSArray* items = [self uniqItems:nodes(doc, @"//item")];
   addSection(listView, format(@"Mania DB: %@", section(_method, artist, song, album)));
 
   for (NSXMLNode* item in items) {
     AlbumView* albumView = add(listView);
-    NSString* albumId = _method == M_ArtistSong ? albumIdFrom(textOf(item, @"maniadb:album/link")) :
+    NSString* albumId = songQuery ? albumIdFrom(textOf(item, @"maniadb:album/link")) :
                                  textOf(item, @"@id");
     url = [NSString stringWithFormat:@"http://www.maniadb.com/api/album.asp?key=d232a03189c58cab2868&a=%@", albumId];
     NSXMLDocument* albumDoc = xmlDoc(url);
@@ -121,7 +127,7 @@ static NSString* chomp(NSString* str)
             break;
           }
         } else {
-          NSLog(@"---------[%@]", imageURL);
+          // NSLog(@"---------[%@]", imageURL);
           break;
         }
       }
