@@ -168,8 +168,10 @@
 - (void)setSong:(NSString*)song
 {
   _song = song;
-  [[_tracks objectAtIndex:0] setStringValue:
-   _trackNumber > 0 ? format(@"%d. %@", _trackNumber, _song) : _song];
+  NSTextField* track = [_tracks objectAtIndex:0];
+  NSString* str = _trackNumber > 0 ? format(@"%d. %@", _trackNumber, _song) : _song;
+  [track setStringValue:str];
+  [track setToolTip:str];
 }
 
 - (void)addSong:(NSString*)song disc:(NSString*)disc track:(NSString*)trackNo score:(int)score
