@@ -25,6 +25,20 @@ static NSString* largeVersion(NSString* str)
   return [str stringByReplacingOccurrencesOfRegex:@"www\\." withString:@"image."];
 }
 
+static NSString* hackVersion(NSString* str)
+{
+  NSString* number = match(str, @"a=([0-9]+)", 1);
+  NSString* three = match(number, @"...", 0);
+  return format(@"http://image.maniadb.com/images/album/%@/%@_f_1.jpg", three, number);
+}
+
+static NSString* hackVersion2(NSString* str)
+{
+  NSString* number = match(str, @"a=([0-9]+)", 1);
+  NSString* three = match(number, @"...", 0);
+  return format(@"http://image.maniadb.com/images/album/%@/%@_1_f.jpg", three, number);
+}
+
 static NSString* chomp(NSString* str)
 {
   return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -79,8 +93,10 @@ static NSString* chomp(NSString* str)
                                  textOf(item, @"@id");
     url = [NSString stringWithFormat:@"http://www.maniadb.com/api/album.asp?key=d232a03189c58cab2868&a=%@", albumId];
     NSXMLDocument* albumDoc = xmlDoc(url);
-    // NSLog(@"%@", largeVersion(textOf(albumDoc, @"//image")));
-    setImage(albumView, largeVersion(textOf(albumDoc, @"//image")));
+
+    if (!setImageDirect(albumView, hackVersion(textOf(albumDoc, @"//image")))) {
+      setImageDirect(albumView, hackVersion2(textOf(albumDoc, @"//image")));
+    }
     setArtist(albumView, textOf(albumDoc, @"//maniadb:artist/name"));
     setAlbum(albumView, textOf(albumDoc, @"//maniadb:shorttitle"));
     setYear(albumView, yearFrom(textOf(albumDoc, @"//item/releasedate")));

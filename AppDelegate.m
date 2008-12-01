@@ -80,6 +80,8 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
 - (void)searchThread
 {
   NSArray* searchers = [[NSUserDefaults standardUserDefaults] valueForKey:@"searchers"];
+  // If user modifies preferences
+  searchers = [searchers copy];
   for (NSDictionary* searchInfo in searchers) {
     BOOL enabled = [[searchInfo valueForKey:@"enabled"] boolValue];
     SearchMethod method = [[searchInfo valueForKey:@"method"] intValue];
@@ -107,7 +109,7 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
   }
 }
 
-- (void)findInfo
+- (void)findInfo:(BOOL)forced
 {
   id iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
   [iTunes setDelegate:self];
@@ -116,7 +118,7 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
   if (artist) {
     NSString* album = [_track album];
     NSString* song = [_track name];
-    if ([song isEqualToString:_song] && [artist isEqualToString:_artist])
+    if (!forced && [song isEqualToString:_song] && [artist isEqualToString:_artist])
       return;
     if (_thread) {
       [_thread cancel];
@@ -137,7 +139,7 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
 - (void)iTunesNotification:(NSNotification*)notification
 {
   if ([[[notification userInfo] valueForKey:@"Player State"] isEqualToString:@"Playing"]) {
-    [self findInfo];
+    [self findInfo:NO];
   }
 }
 
@@ -148,7 +150,7 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
                                                       selector:@selector(iTunesNotification:)
                                                           name:@"com.apple.iTunes.playerInfo"
                                                         object:nil];
-  [self findInfo];
+  [self findInfo:NO];
 }
 
 - (AlbumView*)curView
@@ -173,9 +175,9 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
 
 - (IBAction)add:sender
 {
-  [NSApp beginSheet:_addSheet modalForWindow:_preferences modalDelegate:self
-    didEndSelector:@selector(didEndSheet:returnCode:contextInfo:) contextInfo:nil];
   [_searchController addObject:searchInfo(YES, M_Artist, S_ManiaDB)];
+  [NSApp beginSheet:_addSheet modalForWindow:_preferences modalDelegate:self
+      didEndSelector:@selector(didEndSheet:returnCode:contextInfo:) contextInfo:nil];
 }
 
 - (IBAction)remove:sender
@@ -186,12 +188,14 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
 - (IBAction)save:sender
 {
   [_preferences orderOut:self];
+  [[NSUserDefaults standardUserDefaults] setValue:_searchers forKey:@"searchers"];
+  [self findInfo:YES];
 }
 
 - (void)awakeFromNib
 {
   [self willChangeValueForKey:@"searchers"];
-  _searchers = [[NSUserDefaults standardUserDefaults] valueForKey:@"searchers"];
+  _searchers = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] valueForKey:@"searchers"]];
   [self didChangeValueForKey:@"searchers"];
 }
 

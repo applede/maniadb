@@ -109,3 +109,4 @@ int discFrom(NSString* str);
 int score(NSString* a, NSString* b);
 NSString* cleanUpTrackName(NSString* str, NSString* artist);
 void setImage(AlbumView* albumView, NSString* url);
+BOOL setImageDirect(AlbumView* albumView, NSString* url);
