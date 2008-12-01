@@ -199,4 +199,9 @@ static NSDictionary* searchInfo(BOOL enabled, SearchMethod method, SearchSite si
   [self didChangeValueForKey:@"searchers"];
 }
 
+- (void)applicationDidBecomeActive:(NSNotification*)noti
+{
+  [_window orderFront:self];
+}
+
 @end
