@@ -22,3 +22,7 @@
   * If song name or artist changes as a result of click, it will search again.
   * You have to click while the song plays.
   * If you activate other program, it will hide itself automatically. Click dock icon, use command-tab or play other song to show it up again.
+
+= Thanks to =
+
+  * Icon is drawn by umimoon753 at appleforum.com.
