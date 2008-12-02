@@ -34,6 +34,9 @@
   int encoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingEUC_KR);
   // sometimes stringByAddingPercentEscapesUsingEncoding: doesn't work
   const char* bytes = [artist cStringUsingEncoding:encoding];
+  if (!bytes) {
+    return;
+  }
   artist = [[NSString alloc] initWithBytes:bytes length:strlen(bytes) encoding:encoding];
   NSString* url = format(@"http://cover.zzlzzl.net/?search_str=%@&mode=search&Submit=Submit",
                          query(_method,
@@ -44,6 +47,9 @@
   NSString* html = [NSString stringWithContentsOfURL:[NSURL URLWithString:url]
                                            encoding:encoding
                                            error:&err];
+  if (!html) {
+    return;
+  }
   NSXMLDocument* doc = [[NSXMLDocument alloc] initWithXMLString:html options:NSXMLDocumentTidyHTML error:&err];
   NSArray* items = nodes(doc, @"//tr");
   addSection(listView, format(@"Cover ZzlZzl: %@", section(_method, artist, song, album)));
