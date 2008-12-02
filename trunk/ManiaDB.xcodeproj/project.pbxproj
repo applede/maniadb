@@ -14,6 +14,7 @@
 		1837BEB00EDF45CC0095CA4F /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837BEAF0EDF45CC0095CA4F /* Util.m */; };
 		1853E1C20EE1F54600A17FE7 /* SearchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853E1C10EE1F54600A17FE7 /* SearchInfo.m */; };
 		1853E2F90EE2917D00A17FE7 /* MyArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853E2F80EE2917D00A17FE7 /* MyArrayController.m */; };
+		185C536E0EE5749E00B8032C /* maniadb.icns in Resources */ = {isa = PBXBuildFile; fileRef = 185C536D0EE5749E00B8032C /* maniadb.icns */; };
 		18C5B1250EDDC35D001960FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B1240EDDC35D001960FE /* AppDelegate.m */; };
 		18C5B1300EDDC4F2001960FE /* ListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B12F0EDDC4F2001960FE /* ListView.m */; };
 		18C5B13F0EDDC6ED001960FE /* AlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5B13E0EDDC6ED001960FE /* AlbumView.m */; };
@@ -44,6 +45,7 @@
 		1853E1C10EE1F54600A17FE7 /* SearchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchInfo.m; sourceTree = "<group>"; };
 		1853E2F70EE2917D00A17FE7 /* MyArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyArrayController.h; sourceTree = "<group>"; };
 		1853E2F80EE2917D00A17FE7 /* MyArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyArrayController.m; sourceTree = "<group>"; };
+		185C536D0EE5749E00B8032C /* maniadb.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = maniadb.icns; sourceTree = "<group>"; };
 		18C5B1230EDDC35D001960FE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18C5B1240EDDC35D001960FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18C5B12E0EDDC4F2001960FE /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				185C536D0EE5749E00B8032C /* maniadb.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -240,6 +243,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				185C536E0EE5749E00B8032C /* maniadb.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
