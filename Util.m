@@ -17,23 +17,27 @@ int score(NSString* a, NSString* b)
   } else {
     NSString* as = [a lowercaseString];
     NSString* bs = [b lowercaseString];
+    int alen = [as length];
+    int blen = [bs length];
     if ([as isEqualToString:bs]) {
       return 99;
     } else if (includes(bs, as)) {
-      return 98;
+      return 98 - (blen - alen);
     } else if (includes(as, bs)) {
-      return 97;
+      return 97 - (alen - blen);
     } else {
       NSString* am = gsub(as, @"feat(\\.|uring).*", @"");
       NSString* bm = gsub(bs, @"feat(\\.|uring).*", @"");
-      am = gsub(am, @"[- .,!'\"\\?\\(\\)]", @"");
-      bm = gsub(bm, @"[- .,!'\"\\?\\(\\)]", @"");
+      am = gsub(am, @"[- .,!'/\"\\?\\(\\)]", @"");
+      bm = gsub(bm, @"[- .,!'/\"\\?\\(\\)]", @"");
+      int alen = [am length];
+      int blen = [bm length];
       if ([am isEqualToString:bm]) {
         return 96;
       } else if (includes(bm, am)) {
-        return 95;
+        return 95 - (blen - alen);
       } else if (includes(am, bm)) {
-        return 94;
+        return 94 - (alen - blen);
       } else {
         return 0;
       }

@@ -41,8 +41,9 @@ static inline NSString* escape(NSString* str)
 
 static inline NSString* unescape(NSString* str)
 {
-  return [[str stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"]
-          stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+  return [[[str stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"]
+          stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]
+          stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@" "];
 }
 
 static inline NSXMLDocument* xmlDoc(NSString* url)
